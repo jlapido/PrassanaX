@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Proximas clases</h1>
+
+    {% if clase_list %}
+    <ul>
+
+      {% for claseinst in clase_list %}
+        {% if claseinst.is_past %}
+        {% else %}
+
+      <li>
+        <a href="{% url 'clase-detail' claseinst.clase.pk %}">{{claseinst.clase.DiaHora}}</a> ({{ claseinst.PlazasLibres }})
+      </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>No hay clases disponibles.</p>
+    {% endif %}       
+{% endblock %}

@@ -1,0 +1,20 @@
+* {font-size: 1.2em}
+body {background-color: #fff2e6}
+header {font-size: 1.8em; background-color: #cc6600; height: 200px; text-align: center; margin-bottom: 15px;
+border-radius: 10px; margin-top: -25px; margin-left: -6px}
+aside {padding-top: 5px; width: 350px; height: 67em ;float: left; box-shadow: 10px 10px 5px; background-color: #ffcc33
+  ; margin-left: -6px}
+section { width: 60%; float: right; background-color: #fff2e6; margin-bottom: 17px;
+  ; margin-right: 5%; padding-left: 1em}
+.boton {float: right; margin-right: 600px; margin-top: 25px}
+.botona {margin-top: 25px}
+footer {background-color: #cc6600; clear: both; margin-bottom: 10em; margin-left: -6px; border-radius: 10px}
+#icono {float: left; background-color: black; width: 200px; height: 200px;margin-left: -15px; border-top-left-radius: 10px; border-bottom-left-radius: 10px}
+#iconob {margin-top: -148px; float: right; background-color: black; width: 200px; height: 200px}
+.nav a {font-size: 0.8em; color: black}
+#sectionform {font-size: 0.8em}
+#miform {font-size: .8em}
+#title {font-size: 1.7em}
+#asidecontact {height: 33em}
+h2 {color: red}
+#logbuttons {float: center}
