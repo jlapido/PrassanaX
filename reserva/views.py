@@ -16,6 +16,20 @@ def index(request):
     )
 
 
+def monitores(request):
+    return render(
+        request,
+        'monitores.html',
+    )
+
+
+def horarios(request):
+    return render(
+        request,
+        'horarios.html',
+    )
+
+
 # Create your views here.
 
 
@@ -28,11 +42,11 @@ class AvailableClassesListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        return Clase.objects.all().order_by('DiaHora')
+        return Clase.objects.all().order_by('Dia')
 
     """
     def get_querysets(self):
-        return Clase.objects.filter(alumnoID=self.request.user).order_by('DiaHora')
+        return Clase.objects.filter(alumnoID=self.request.user).order_by('Dia')
     """
 
 

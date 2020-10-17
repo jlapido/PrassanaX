@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %}
+
+{% block sidebar %}
+
+{% load static %}
+    {% if user.is_authenticated %}
+      <li>User: {{ user.get_username }}</li>
+      <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+    {% endif %}
+    <aside>
+        <br><br>
+        <b>Manu</b><br>
+      <img src=" {% static 'images/Manu.png' %}" alt="Profesor Manu"/>
+        <b>Marisa</b><br>
+      <img src=" {% static 'images/Marisa.jpg' %}" alt="Profesora Marisa"/><br>
+        <b>Juan</b><br>
+      <img src=" {% static 'images/Juan.jpg' %}" alt="Profesor Juan"/>
+      <! <img src=" {% static 'images/foto4.jpg' %}" alt="lady Yoga"/>
+      <! <img src=" {% static 'images/foto3.jpg' %}" alt="meditation"/>
+        <ul>
+        <li><a href="https://www.yogananda-srf.org/%C2%BFQu%C3%A9_es_el_yoga_realmente_.aspx" target="_blank" title="Qué es el yoga">¿Qué es el yoga?</a></li>
+        <li><a href="https://www.expansion.com/directivos/estilo-vida/estar-forma/2016/03/29/56fabfe046163f0b598b45cc.html" target="_blank" title="Beneficios de yoga">Beneficios de yoga</a></li>
+      </ul><br/>
+    </aside>
+   {% endblock %}
+
+{% block content %}
+
+<div class="monitor">
+    <h1 id="profe">Profesores</h1>
+    <p>
+        <b>Manu</b> lleva con nosotros desde el principio. LLeva más de 25 años practicando el yoga y desde hace 19 años es un
+        profesor certificado por las F.U. Las clases de Manu son para todos los niveles aunque los alumnos más avanzados
+        podrán retarse con sus ejercicios alternativos.<br><br><br>
+
+        <b>Marisa</b> es una excelente profesora de Madrid. LLeva con nosotros 4 años y tiene certificación de las F.U. como
+        profesora de yoga además de ser fisioterapeuta. Las clases de Marisa transportan a nuestros alumnos a un estado
+        de contemplación y bienestar a través de su hincapié en ejercicios de estiramiento, fuerza y equilibrio.<br><br>
+        <br>
+
+        A pesar de ser la más reciente de nuestras incorporaciones, <b>Juan</b> aporta una energía vital a nuestro centro. LLeva
+        practicando yoga desde que era adoslescente e incorpora su dinamismo a las clases. Con Juan podrás investigar cómo
+        haciendo un ejercicio guiado se logra aquietar la mente.<br><br><br>
+            En el centro Prassana nuestro mayor valor, aparte de nuestros alumnos, que nos ayudáis a crecer tanto como nosotros a
+        vosotros, son nuestros profesores. El yoga es una disciplina compuesta de mucho aspectos, tanto físicos como psíquicos
+        que se deben aprovechar para llevarnos a un estado de harmonía y equilibrio. <br>
+        Es por esto que sabemos que dar con los profesores adecuados es de vital importancia.<br>
+        Aquí os damos una pequeña introducción a nuestros profesores.<br><br>
+        </div>
+    </p>
+</div>
+
+{% endblock %}

@@ -7,4 +7,6 @@ from . import views
 urlpatterns = [
     path('', index, name='index'),
     path('available_class_list.html', views.AvailableClassesListView.as_view(), name='my_classes'),
+    path('monitores', views.monitores, name='monitores'),
+    path('horarios', views.horarios, name='horarios'),
 ]

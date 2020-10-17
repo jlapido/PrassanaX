@@ -39,11 +39,11 @@ class Clase(models.Model):
     def __str__(self):
         # Cadena para representar el objeto Clase (en el sitio de Admin, etc.)
 
-        return "Clase {}. Fecha {}. Profesor {}.".format(self.claseID, self.DiaHora, self.profesor)
+        return "Clase {}. Fecha {}. Profesor {}.".format(self.claseID, self.Dia, self.profesor)
 
     @property
     def is_past(self):
-        if self.Dia and date.today() > self.DiaHora:
+        if self.Dia and date.today() > self.Dia:
             return True
         return False
 
@@ -63,4 +63,5 @@ class ClaseAlumno(models.Model):
 
         return "Referencia {}. Id de la clase {}. Id del alumno {}.".format(self.Referencia, self.claseID,
                                                                             self.alumnoID)
+
 

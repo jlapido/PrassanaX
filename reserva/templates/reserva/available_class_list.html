@@ -1,17 +1,21 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Proximas clases</h1>
+
+<p id="proxima"><b>Próximas clases</b></p><br>
 
     {% if clase_list %}
-    <ul>
+    <ul class="clases">
 
       {% for claseinst in clase_list %}
         {% if claseinst.is_past %}
         {% else %}
 
+
       <li>
-        <a href="{% url 'clase-detail' claseinst.clase.pk %}">{{claseinst.clase.DiaHora}}</a> ({{ claseinst.PlazasLibres }})
+        <a href="{% url 'my_classes' %}">Reserva tu plaza: </a>{{claseinst.Dia}} a las {{claseinst.Hora}}. Impartida por
+          {{claseinst.profesor}}. Plazas disponibles: ({{ claseinst.PlazasLibres }})<br><br>
+
       </li>
         {% endif %}
         {% endfor %}
@@ -19,5 +23,6 @@
 
     {% else %}
       <p>No hay clases disponibles.</p>
-    {% endif %}       
+    {% endif %}
+
 {% endblock %}

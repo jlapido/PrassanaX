@@ -1,38 +1,51 @@
 {% extends "base_generic.html" %}
 
+
+{% block sidebar %}
+{% load static %}
+{% if user.is_authenticated %}
+<li>User: {{ user.get_username }}</li>
+<li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+{% endif %}
+    <aside class="sidelog">
+
+      <!<img src=" {% static 'images/foto1.jpg' %}" alt="mujer Yoga"/>
+      <img src=" {% static 'images/foto2.jpg' %}" alt="hombre yoga"/>
+      <!<img src=" {% static 'images/foto5.jpg' %}" alt="budda"/>
+      <img src=" {% static 'images/foto4.jpg' %}" alt="lady Yoga"/>
+      <! <img src=" {% static 'images/foto3.jpg' %}" alt="meditation"/>
+    </aside>
+{% endblock %}
+
+
 {% block content %}
 
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<div class="log">El nombre de usuario o la contraseña no son correctos. Por favor inténtelo de nuevo.</div>
 {% endif %}
 
 {% if next %}
     {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
+    <p>Su cuenta no tiene acceso a esta página. Para continura,
+        por favor inicie sesión con una cuenta que tenga acceso.</p>
     {% else %}
-    <p>Please login to see this page.</p>
     {% endif %}
 {% endif %}
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
 
-<div>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
+<div class="login">
+  <td>{{ form.username.label_tag }}</td><br>
+  <td>{{ form.username }}</td><br><br>
 </div>
-<div>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</div>
+<div class="login">
+  <td class="login">{{ form.password.label_tag }}</td><br>
+  <td class="login">{{ form.password }}</td><br><br><br>
 
-<div id="logbuttons">
-  <input type="submit" value="login" />
+  <input id="loggin" type="submit" value="login" />
   <input type="hidden" name="next" value="{{ next }}" />
 </div>
 </form>
-
-
 
 {% endblock %}

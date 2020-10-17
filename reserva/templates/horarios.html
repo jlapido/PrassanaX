@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %}
+
+{% block sidebar %}
+ {% load static %}
+
+    {% if user.is_authenticated %}
+      <li>User: {{ user.get_username }}</li>
+      <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+    {% endif %}
+    <aside class="horas">
+
+      <img src=" {% static 'images/foto1.jpg' %}" alt="mujer Yoga"/>
+      <img src=" {% static 'images/foto2.jpg' %}" alt="hombre yoga"/>
+      <img src=" {% static 'images/foto5.jpg' %}" alt="budda"/>
+      <img src=" {% static 'images/foto4.jpg' %}" alt="lady Yoga"/>
+      <! <img src=" {% static 'images/foto3.jpg' %}" alt="meditation"/>
+
+    </aside>
+{% endblock %}
+
+{% block content %}
+
+<div class="cuerpo">
+    <h3>Contacto:</h3>
+    <h7>Teléfono:</h7></br>
+    922-252729</br></br>
+    <h7>Dirección:</h7></br>
+    Calle Pío Baroja 27</br>
+    38007, Santa Cruz de Tenerife</br>
+
+    <div id="frame">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1753.793637315457!2d-16.269733241934915!3d28.461855453645505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cc8e3ee5a987%3A0xe3e55e96023dfa10!2sCalle%20P%C3%ADo%20Baroja%2C%2038007%20Santa%20Cruz%20de%20Tenerife!5e0!3m2!1ses!2ses!4v1602787498635!5m2!1ses!2ses" width="300" height="225"
+            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+
+    <h3>Horarios:</h3>
+
+    Mañanas: Lunes, Miércoles, Jueves y Viernes a las 9:00h.</br>
+
+    Tardes: Lunes, Miércoles y Viernes a las 18:00h.</br>
+
+    Noches: Lunes, Jueves y Viernes a las 20:30h.</br>
+
+    <h3>Tarifas:</h3>
+    Abono mensual: 40€</br>
+
+    Abono semanal: 15€</br>
+
+    Clase suelta: 5€</br></br>
+    Si nunca has recibido clases en nuestro centro te invitamos a probar una clase completamente gratis.
+</div>
+
+{% endblock %}
