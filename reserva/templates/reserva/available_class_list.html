@@ -1,4 +1,21 @@
 {% extends "base_generic.html" %}
+  {% load static %}
+    {% block sidebar %}
+
+    {% if user.is_authenticated %}
+      <li>User: {{ user.get_username }}</li>
+      <li><a href="{% url 'logout'%}?next={{request.path}}">Cerrar sesión</a></li>
+    {% endif %}
+    <aside class="classlist" >
+        <img src=" {% static 'images/foto1.jpg' %}" alt="mujer Yoga"/>
+      <img src=" {% static 'images/foto2.jpg' %}" alt="hombre yoga"/>
+      <img src=" {% static 'images/foto5.jpg' %}" alt="budda"/>
+      <img src=" {% static 'images/foto4.jpg' %}" alt="lady Yoga"/>
+      <! <img src=" {% static 'images/foto3.jpg' %}" alt="meditation"/>
+    </aside>
+
+
+   {% endblock %}
 
 {% block content %}
 

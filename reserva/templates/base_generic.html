@@ -35,7 +35,7 @@
     {% block sidebar %}
     {% if user.is_authenticated %}
       <li>User: {{ user.get_username }}</li>
-      <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+      <li><a href="{% url 'logout'%}?next={{request.path}}">Cerrar sesión</a></li>
     {% endif %}
     <aside>
 
@@ -46,7 +46,7 @@
       <! <img src=" {% static 'images/foto3.jpg' %}" alt="meditation"/>
         <ul>
         <li><a href="https://www.yogananda-srf.org/%C2%BFQu%C3%A9_es_el_yoga_realmente_.aspx" target="_blank" title="Qué es el yoga">¿Qué es el yoga?</a></li>
-        <li><a href="https://www.expansion.com/directivos/estilo-vida/estar-forma/2016/03/29/56fabfe046163f0b598b45cc.html" target="_blank" title="Beneficios de yoga">Beneficios de yoga</a></li>
+        <li><a href="https://www.expansion.com/directivos/estilo-vida/estar-forma/2016/03/29/56fabfe046163f0b598b45cc.html" target="_blank" title="Beneficios del yoga">Beneficios del yoga</a></li>
       </ul><br/>
     </aside>
    {% endblock %}

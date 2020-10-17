@@ -5,6 +5,9 @@ from datetime import date
 
 
 class Usuario(AbstractUser):
+    """
+    Modelo de la clase Usuario que hereda de la clase AbstractUser.
+    """
     usuario_id = models.AutoField(primary_key=True)
 
 
@@ -24,17 +27,10 @@ class Clase(models.Model):
     # Metadata
 
     class Meta:
+        """
+        para ordenar los objetos por el campo Dia.
+        """
         ordering = ["Dia"]
-
-    """
-
-    # Métodos
-    def get_absolute_url(self):
-
-        Devuelve la url para acceder a una instancia particular de MyModelName.
-
-        return reverse('model-detail-view', args=[str(self.id)])
-    """
 
     def __str__(self):
         # Cadena para representar el objeto Clase (en el sitio de Admin, etc.)
@@ -43,6 +39,10 @@ class Clase(models.Model):
 
     @property
     def is_past(self):
+        """
+        método que compara la fecha de la clase con la fecha actual y devuelve True si la de la clase es posterior.
+        :return: Booleano
+        """
         if self.Dia and date.today() > self.Dia:
             return True
         return False
@@ -50,7 +50,8 @@ class Clase(models.Model):
 
 class ClaseAlumno(models.Model):
     """
-    Modelo de la clase ClaseAlumno, derivado desde la clase Model.
+    Modelo de la clase ClaseAlumno, derivado desde la clase Model. Se guarda claseID que enlaza con la clase Clase y
+    alumnoID que enlaza con la clase User.
     """
     Referencia = models.AutoField(primary_key=True)
     claseID = models.ForeignKey('Clase', on_delete=models.SET_NULL, null=True, blank=True)

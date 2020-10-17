@@ -9,7 +9,7 @@ section { width: 60%; float: right; background-color: #fff2e6; margin-bottom: 17
   ; margin-right: 5%; padding-left: 1em}
 .boton {float: right; margin-right: 600px; margin-top: 25px}
 .botona {margin-top: 25px}
-footer {background-color: #cc6600; clear: both; margin-bottom: 10em; margin-left: -6px; border-radius: 10px}
+footer {background-color: rgba(204, 102, 0, 0.6); clear: both; margin-bottom: 10em; margin-left: -6px; border-radius: 10px}
 #icono {float: left; background-color: black; width: 200px; height: 200px;margin-left: -15px; border-top-left-radius: 10px; border-bottom-left-radius: 10px}
 #iconob {margin-top: -148px; float: right; background-color: black; width: 200px; height: 200px}
 .nav a {font-size: 0.8em; color: black}
@@ -34,3 +34,4 @@ h1 {text-align: center}
 #titulo {font-style: oblique; color: #331a00}
 #proxima {text-align: center; font-size: 1.5em}
 .logout {text-align: center; margin-top: 4em}
+.classlist {height: 43em}
